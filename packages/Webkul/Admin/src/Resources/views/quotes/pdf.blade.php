@@ -156,10 +156,33 @@
             .summary table td:nth-child(3) {
                 text-align: right;
             }
+
+
+            .watermark{
+                 position: fixed;
+        top: 30%;
+        left: 50%;
+        width: 400px;
+        transform: translate(-50%, -50%);
+        opacity: 0.08; 
+        z-index: -1;
+        
+            }
         </style>
     </head>
 
     <body dir="{{ $locale }}">
+
+
+
+@if ($logo=core()->getConfigData('general.general.admin_logo.logo_image'))
+    <img 
+        class="watermark"
+        src="{{ public_path('storage/' . $logo) }}"
+        alt="Watermark"
+    />
+@endif
+
         <div class="page">
             <!-- Header -->
             <div class="page-header">

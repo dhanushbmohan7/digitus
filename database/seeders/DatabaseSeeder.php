@@ -15,5 +15,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(KrayinDatabaseSeeder::class);
+
+
+$this->call([
+       ContactsSeeder::class,
+            LeadsSeeder::class,
+         
+            ProductsSeeder::class,
+            ProductInventorySeeder::class,
+            //QuotesSeeder::class,
+        ]);
+
     }
 }

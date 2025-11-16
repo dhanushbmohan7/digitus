@@ -776,9 +776,17 @@
                      * @return {void}
                      */
                     addProduct(result) {
+                       let end_price=result.price;
+                       
                         this.product.product_id = result.id ?? null;
                         this.product.name = result.name ?? '';
-                        this.product.price = result.price ?? 0;
+if(result.offer_price>0 && result.offer_price<result.price) {
+    end_price=result.offer_price;
+                        
+                       }
+                        
+                       
+                        this.product.price = end_price ?? 0;
                         this.product.quantity = result.quantity ?? 1;
                         this.product.discount_amount = 0;
                         this.product.tax_amount = 0;
