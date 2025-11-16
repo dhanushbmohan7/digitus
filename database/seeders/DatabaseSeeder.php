@@ -16,14 +16,13 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(KrayinDatabaseSeeder::class);
 
-
-$this->call([
-       ContactsSeeder::class,
+        $this->call([
+            ContactsSeeder::class,
             LeadsSeeder::class,
-         
+
             ProductsSeeder::class,
             ProductInventorySeeder::class,
-            //QuotesSeeder::class,
+            // QuotesSeeder::class,
         ]);
 
     }
